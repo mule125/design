@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Glow Calculator</title>
+    <style>
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    max-width: 400px;
+    width: 100%;
+}
+
+.calculator-screen {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ffcc;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px #00ffcc;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.key {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.6rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.key:hover {
+    background: rgba(0, 255, 204, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5), 0 0 20px rgba(0, 255, 204, 0.3);
+}
+
+.key:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+.operator {
+    background: rgba(255, 0, 136, 0.2);
+    color: #ff0099;
+    text-shadow: 0 0 10px rgba(255, 0, 136, 0.5);
+}
+
+.operator:hover {
+    background: rgba(255, 0, 136, 0.4);
+    box-shadow: 0 0 10px rgba(255, 0, 136, 0.5), 0 0 20px rgba(255, 0, 136, 0.3);
+}
+
+.equal-sign {
+    background: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+    grid-column: span 2;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.equal-sign:hover {
+    background: rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.all-clear {
+    background: rgba(255, 69, 58, 0.2);
+    color: #ff453a;
+    grid-column: span 2;
+    text-shadow: 0 0 10px rgba(255, 69, 58, 0.5);
+}
+
+.all-clear:hover {
+    background: rgba(255, 69, 58, 0.4);
+    box-shadow: 0 0 10px rgba(255, 69, 58, 0.5), 0 0 20px rgba(255, 69, 58, 0.3);
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator-screen" id="screen"></div>
+
+        <div class="calculator-keys">
+            <button type="button" class="key operator" value="+">+</button>
+            <button type="button" class="key operator" value="-">-</button>
+            <button type="button" class="key operator" value="*">&times;</button>
+            <button type="button" class="key operator" value="/">&divide;</button>
+
+            <button type="button" class="key" value="7">7</button>
+            <button type="button" class="key" value="8">8</button>
+            <button type="button" class="key" value="9">9</button>
+
+            <button type="button" class="key" value="4">4</button>
+            <button type="button" class="key" value="5">5</button>
+            <button type="button" class="key" value="6">6</button>
+
+            <button type="button" class="key" value="1">1</button>
+            <button type="button" class="key" value="2">2</button>
+            <button type="button" class="key" value="3">3</button>
+
+            <button type="button" class="key" value="0">0</button>
+            <button type="button" class="key" value=".">.</button>
+            <button type="button" class="key equal-sign" value="=">=</button>
+            <button type="button" class="key all-clear" value="all-clear">AC</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
